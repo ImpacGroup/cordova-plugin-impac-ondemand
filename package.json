@@ -1,0 +1,39 @@
+{
+  "name": "cordova-plugin-impac-ondemand",
+  "version": "1.0.0",
+  "description": "An Cordova plugin for iOS and Android that allows to on demand resources.",
+  "cordova": {
+    "id": "cordova-plugin-impac-ondemand",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImpacGroup/cordova-plugin-impac-ondemand.git"
+  },
+  "keywords": [
+    "cordova",
+    "android",
+    "ios",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.0": {
+        "cordova-android": ">8.0.0",
+        "cordova-ios": ">5.0.0",
+        "cordova-plugin-android-support-v7-appcompat": "1.0.0"
+      }
+    }
+  },
+  "author": "Impac GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ImpacGroup/cordova-plugin-impac-ondemand/issues"
+  },
+  "homepage": "https://github.com/ImpacGroup/cordova-plugin-impac-ondemand#readme"
+}
