@@ -20,15 +20,21 @@ class IMPOdrManager {
         
         guard let request = currentRequest else { return }
         
-        request.conditionallyBeginAccessingResources { (available) in
-            if available {
-                onSuccess()
-            } else {
-                request.beginAccessingResources { (error: Error?) in
-                    if let error = error {
-                        onFailure(error as NSError)
-                    } else {
+        DispatchQueue.global().async {
+            request.conditionallyBeginAccessingResources { (available) in
+                if available {
+                    DispatchQueue.main.async {
                         onSuccess()
+                    }
+                } else {
+                    request.beginAccessingResources { (error: Error?) in
+                        DispatchQueue.main.async {
+                            if let error = error {
+                                onFailure(error as NSError)
+                            } else {
+                                onSuccess()
+                            }
+                        }
                     }
                 }
             }

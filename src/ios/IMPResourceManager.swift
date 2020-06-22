@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import Cordova
 
-@objc (ImpacOnDemand) class IMPResourceManager: CDVPlugin {
+@objc (ImpacOnDemand) class ImpacOnDemand: CDVPlugin {
  
     @objc(loadResource:) func loadResource(command: CDVInvokedUrlCommand) {
         if command.arguments.count == 1, let tag = command.arguments[0] as? String {

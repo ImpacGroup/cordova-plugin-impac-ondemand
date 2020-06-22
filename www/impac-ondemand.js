@@ -3,8 +3,8 @@
 // Empty constructor
 function ImpacOnDemand() {}
 
-ImpacOnDemand.prototype.loadResource = function(successCallback, errorCallback, tag) {
-    cordova.exec(successCallback, errorCallback, 'ImpacOnDemand', 'loadResource', tag);
+ImpacOnDemand.prototype.loadResource = function(tag, successCallback, errorCallback) {
+    cordova.exec(successCallback, errorCallback, 'ImpacOnDemand', 'loadResource', [tag]);
 }
 
 ImpacOnDemand.install = function() {
