@@ -26,6 +26,7 @@
             </feature>
         </config-file>
         <source-file src="src/ios/IMPResourceManager.swift"/>
+        <source-file src="src/ios/IMPOdrManager.swift"/>
     </platform>
 
     <platform name="android">
