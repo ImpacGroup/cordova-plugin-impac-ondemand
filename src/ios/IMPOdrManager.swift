@@ -14,14 +14,15 @@ class IMPOdrManager {
     static let shared = IMPOdrManager()
     var currentRequest: NSBundleResourceRequest?
     
-    func requestFiles(tag: String, onSuccess: @escaping () -> Void, onFailure: @escaping (NSError) -> Void) {
+    func requestFiles(tags: Set<String>, onSuccess: @escaping () -> Void, onFailure: @escaping (NSError) -> Void) {
         
-        currentRequest = NSBundleResourceRequest(tags: [tag])
+        currentRequest = NSBundleResourceRequest(tags: tags)
         
         guard let request = currentRequest else { return }
         
         DispatchQueue.global().async {
             request.conditionallyBeginAccessingResources { (available) in
+
                 if available {
                     DispatchQueue.main.async {
                         onSuccess()
